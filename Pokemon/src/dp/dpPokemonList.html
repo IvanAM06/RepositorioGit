@@ -1,0 +1,52 @@
+<script>
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import { setPassiveTouchGestures } from '@polymer/polymer/lib/utils/settings';
+import '@polymer/iron-collapse/iron-collapse.js';
+import '@polymer/iron-ajax/iron-ajax.js';
+</script>
+
+<dom-module id="pokemon-list">
+    <template is="dom-repeat" items="[[pokemons]]">
+        <pokemon-detalle
+   
+        ></pokemon-detalle>
+      </template>
+</dom-module>
+
+<script>
+class DpPokemonList extends PolymerElement {
+    static get is (){
+      return 'pokemon-list';
+    }
+
+    static get template () {
+        // Template getter must return an instance of HTMLTemplateElement.
+        // The html helper function makes this easy.
+        return html;
+      }
+
+    static get properties (){
+        return{
+            pokemons: {
+              type: Array,
+              value: function(){
+                return [
+                ];
+              }
+            }
+          };
+    }
+
+    resaltarDescripcion(e){
+        console.log(e);
+        this.description = this.description.toUpperCase();
+    }
+
+    toggle(){
+        this.desplegado = !this.desplegado;
+    }
+   
+  }
+
+  customElements.define(DpPokemonList.is, DpPokemonList);
+</script>

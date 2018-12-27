@@ -1,0 +1,35 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+<dom-module id="pokemon-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PokemonApp extends Polymer.Element {
+      static get is() { 
+        return 'pokemon-app'; 
+      }
+
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'pokemon-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PokemonApp.is, PokemonApp);
+  </script>
+</dom-module>

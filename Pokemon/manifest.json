@@ -1,0 +1,7 @@
+{
+  "name": "Pokemon",
+  "short_name": "Pokemon",
+  "description": "Aplicación Pokemón",
+  "start_url": "/",
+  "display": "standalone"
+}
